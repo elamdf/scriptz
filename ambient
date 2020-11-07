@@ -1,0 +1,5 @@
+#!/bin/bash
+mpc clear
+shuf /home/elamd/.config/mpd/playlists/ambient.m3u -o /home/elamd/.config/mpd/playlists/ambient.m3u
+mpc load ambient
+mpc play
