@@ -1,5 +1,0 @@
-#!/bin/bash
-mpc clear
-shuf /home/elamd/.config/mpd/playlists/sniff.m3u -o /home/elamd/.config/mpd/playlists/sniff.m3u
-mpc load sniff
-mpc play

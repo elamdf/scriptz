@@ -1,8 +1,15 @@
+#!/bin/bash
+function play {
+	mpc clear
+	mpc load "$1"
+	mpc shuffle
+	mpc play
+}
 cmds="\
-vibe	vibe
-sniff	sniff
-ambient		ambient
+vibe	play lofi
+sniff	play sniff
+ambient		play ambient
 "
 choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu)" || exit 1
 
-`echo "$cmds" | grep "^$choice	" | cut -d '	' -f2-`
+`echo "$cmds" | grep "^$choice	" | cut -d '	' -f2,3-`
