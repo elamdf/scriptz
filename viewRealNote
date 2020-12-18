@@ -2,7 +2,9 @@
 cd $HOME/.notes/real/
 target=$(fzf)
 if ! [ -z "$target" ]; then
+	echo "compiling..."
 	outputFile="$HOME/.notes/pdf/"$(basename ${target}).pdf""
 	pandoc --pdf-engine=xelatex --wrap=preserve -o "$outputFile" "$target"
 	zathura $outputFile
 fi
+exit
