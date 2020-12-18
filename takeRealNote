@@ -1,0 +1,5 @@
+#!/bin/sh
+cd $HOME/.notes/real
+query=$(fzf --print-query)
+mkdir -p "$(dirname "${query}")"
+echo $query | xargs -r $EDITOR
