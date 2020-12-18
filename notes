@@ -5,4 +5,4 @@ noteFilename="$HOME/.notes/note/note-$(date +%Y-%m-%d).md"
 if [ ! -f $noteFilename ]; then
 	echo "# Notes for $(date +%Y-%m-%d)" > $noteFilename
 fi
-nvim -c "norm Go" -c "norm Go## $(date +%H:%M)" -c "norm G2o" -c "norm zz" -c "startinsert" $noteFilename
+nvim  -c "norm G0o" -c 'norm 0d$i' -c "norm Go## $(date +%H:%M)" -c "norm G2o" -c "norm zz"  $noteFilename
