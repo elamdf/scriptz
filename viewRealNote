@@ -1,8 +1,8 @@
 #!/bin/sh
 cd $HOME/.notes/real/
 target=$(fzf)
-echo $target
-outputFile="$HOME/.notes/pdf/"$(basename ${target}).pdf""
-echo $outputFile
-pandoc --pdf-engine=xelatex --wrap=preserve -o "$outputFile" "$target"
-zathura $outputFile
+if ! [ -z "$target" ]; then
+	outputFile="$HOME/.notes/pdf/"$(basename ${target}).pdf""
+	pandoc --pdf-engine=xelatex --wrap=preserve -o "$outputFile" "$target"
+	zathura $outputFile
+fi
