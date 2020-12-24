@@ -2,4 +2,6 @@
 clear
 cd $MINE
 ls
-
+if { [ "$TERM" = "tmux-256color" ];} then
+	ide
+fi
