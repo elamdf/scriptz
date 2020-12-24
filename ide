@@ -1,5 +1,4 @@
 #!/bin/bash
-tmux set-option default-path "$PWD"
 tmux split-window -d -v -p 20
 tmux split-window -h
 tmux select-pane -t 1
