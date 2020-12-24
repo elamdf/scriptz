@@ -1,0 +1,5 @@
+#!/bin/sh
+target=$(fzf)
+if ! [ -z "$target" ]; then
+	nvim $target
+fi
