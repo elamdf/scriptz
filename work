@@ -1,6 +1,7 @@
 #!/bin/bash
 clear
 cd $MINE
+echo ""
 ls
 if { [ "$TERM" = "tmux-256color" ];} then
 	ide
