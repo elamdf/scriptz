@@ -2,7 +2,7 @@
 tmux new-session -s 'workin' -d -x "$(tput cols)" -y "$(tput lines)"
 tmux split-window -p 20
 tmux select-pane -t 1
-tmux split-window -h
+tmux split-window -h -p 80
 tmux select-pane -t 1
 tmux split-window -b -h -p 35
 tmux select-pane -t 1
@@ -10,7 +10,5 @@ tmux send-keys -t 1 "clear; ls" Enter
 tmux send-keys -t 3 "clear; vfzf" Enter
 tmux send-keys -t 4 "clear" Enter
 tmux send-keys -t 2 "exit" Enter
-tmux select-pane -t 2
-tmux split-window -h -b
-tmux send-keys -t 2 "clear; vfzf" Enter
+tmux select-pane -t 3
 tmux attach-session -t 'workin'

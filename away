@@ -1,2 +1,0 @@
-#!/bin/bash
-xrandr --auto --output DP2 --off --output VGA1 --off --output LVDS1

@@ -1,7 +1,8 @@
 #!/bin/sh
 cd $HOME/.notes/
 msg="Notes Pushed!"
-git add dailynote/* real/* || msg="git add failed :("
+git add dailynote/* || msg="git add dailynote failed :("
+git add real/* || msg="git add real failed :("
 git commit -m "$(date +%Y-%m-%d) daily" || msg="git commit failed :("
 git push || msg="git push failed :("
 notify-send "$msg"
