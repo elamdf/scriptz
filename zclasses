@@ -4,7 +4,7 @@ cmds="\
 2_orch	timeout 30s firefox   "https://ausdk12-org.zoom.us/j/98806237456?pwd=ck5HRVlERjI4ZUd5UXJWWWdRajVyQT09"
 3_csa	timeout 30s firefox   "https://ausdk12-org.zoom.us/j/97146661722?pwd=TTBnMys4cFhPRGYyUVd3VWU2S2pBQT09"
 4_phys	timeout 30s firefox   "https://ausdk12-org.zoom.us/j/97066282455?pwd=MTkwL1Foc3BHQ1ZWS21kOHVncm93QT09"
-6_gov	timeout 30s firefox   "https://ausdk12-org.zoom.us/j/96144630057?pwd=U01wVWpIMXczQU1URzJILzNUZXFFUT09"
+6_econ	timeout 30s firefox    "https://ausdk12-org.zoom.us/j/96144630057?pwd=U01wVWpIMXczQU1URzJILzNUZXFFUT09"
 "
 choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu)" || exit 1
 
