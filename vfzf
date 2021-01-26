@@ -1,5 +1,6 @@
 #!/bin/sh
 target=$(fzf)
+echo "$target"
 if [ -n "$target" ]; then
 	nvim "$target"
 fi
