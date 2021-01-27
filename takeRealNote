@@ -1,8 +1,8 @@
 #!/bin/sh
 cd $HOME/.notes/real
 echo "Time to take a note!"
-query=$(fzf --print-query)
+query=$(fzf)
 if ! [ -z "$query" ]; then
 	mkdir -p "$(dirname "${query}")"
-	echo $query | xargs -r $EDITOR
 fi
+echo $query | xargs -r $EDITOR
