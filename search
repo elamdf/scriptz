@@ -9,7 +9,10 @@ fi
 
 if [ "$(sed "s/down/❎/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)" ]; then
 	if ! [ "$(pgrep kiwix-serve)" ]; then
-		sudo kiwix-serve -d /mnt/SSD/kiwix/wikipedia_en_all_maxi_2021
+		sudo kiwix-serve -d /mnt/SSD/kiwix/wikipedia_en_all_maxi_2021-02.zim
+	fi
+	if ! [ "$(pgrep kiwix-serve)" ]; then
+		exit 1
 	fi
 	surf "http://localhost/search?content=wikipedia_en_all_maxi_2021-02&pattern=""${search// /+}"""
 else
