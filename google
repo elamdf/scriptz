@@ -1,7 +1,0 @@
-search=$(echo "google time" | dmenu)
-echo $search
-if test -z "$search"
-then
-	search=$(xsel)
-fi
-surf "https://www.google.com/search?q=""${search// /+}"""

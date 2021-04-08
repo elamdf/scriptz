@@ -1,0 +1,17 @@
+#!/bin/bash
+search=$(echo "make a search!" | dmenu)
+
+echo "$search"
+if test -z "$search" # pressed esc or smth
+then
+	exit 0
+fi
+
+if [ "$(sed "s/down/❎/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)" ]; then
+	if ! [ "$(pgrep kiwix-serve)" ]; then
+		sudo kiwix-serve -d /mnt/SSD/kiwix/wikipedia_en_all_maxi_2021
+	fi
+	surf "http://localhost/search?content=wikipedia_en_all_maxi_2021-02&pattern=""${search// /+}"""
+else
+	surf "https://www.google.com/search?q=""${search// /+}"""
+fi

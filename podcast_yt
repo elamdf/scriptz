@@ -1,0 +1,4 @@
+#!/bin/sh
+ffmpeg -i "$1" "$1".mp3
+rm "$1"
+mv "$1".mp3 "$1"
