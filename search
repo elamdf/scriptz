@@ -4,7 +4,7 @@ search=$(echo "make a search!" | dmenu)
 echo "$search"
 if test -z "$search" # pressed esc or smth
 then
-	exit 0
+	search=$(xsel)
 fi
 
 if [ "$(sed "s/down/❎/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)" ]; then
