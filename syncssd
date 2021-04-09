@@ -1,9 +1,10 @@
 #!/bin/bash
-if [ -z "$(ls -A /mnt/SSD/readz/)" ]; then
+if grep -qs '/mnt/foo ' /proc/mounts; then
 	sudo mount /dev/sda1 /mnt/SSD
 fi
 
 cd /mnt/SSD/vids || exit 1
+
 
 find /mnt/SSD/vids -name ".url" -print0 | while read -r -d $'\0' file
 do
