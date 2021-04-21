@@ -1,5 +1,5 @@
 #!/bin/bash
-if grep -qs '/mnt/foo ' /proc/mounts; then
+if ! grep -qs '/mnt/SSD ' /proc/mounts; then
 	sudo mount /dev/sda1 /mnt/SSD
 fi
 
@@ -12,4 +12,4 @@ do
 	youtube-dl -f best -ciw -o "%(title)s.%(ext)s" -v "$(cat .url)"
 done
 
-sudo rsync -r /home/elamd/readz /mnt/SSD
+rsync -r /home/elamd/readz /mnt/SSD
