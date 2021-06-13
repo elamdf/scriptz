@@ -1,0 +1,15 @@
+#!/bin/bash
+for i in 0 1
+do
+
+	quote="$(shuf -n 1 "$HOME/Documents/quotes.txt")"
+	while [ ${#quote} -ge 168 ]
+	do
+		quote="$(shuf -n 1 "$HOME/Documents/quotes.txt")"
+	done
+	echo -ne "$i$quote" > /dev/ttyACM0
+	echo "$i$quote"
+	echo "BRUH"
+	quote=""
+	sleep 1
+done
