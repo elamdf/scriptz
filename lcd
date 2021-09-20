@@ -1,0 +1,20 @@
+#!/bin/bash
+str=""
+mod="0"
+
+while getopts m:c:l: flag
+do
+    case "${flag}" in
+        m) str=${OPTARG};;
+        l) mod=${OPTARG};;
+        c) mod=${OPTARG};; # color overwrites line
+    esac
+done
+
+
+if ! [ ${#str} -ge 17 ]; then
+    printf '%-17.17s' "$mod$str" | picocom -q /dev/ttyACM0
+else
+    printf '%-17.17s' "0$str" | picocom -q /dev/ttyACM0
+    printf '%-17.17s' "1${str:16}" | picocom -q /dev/ttyACM0
+fi
