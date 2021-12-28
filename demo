@@ -1,0 +1,20 @@
+#!/bin/bash
+echo "lcd 'arbitrary text' 'b'"
+lcd "arbitrary text" "b"
+sleep .5
+echo "lcd 'hello! :\)'"
+lcd "hello! :)"
+sleep .5
+echo "lcd 'arbitrary text' 'c'"
+lcd "arbitrary text" "c"
+sleep .5
+echo "lcd 'this also works on two lines!'"
+lcd "this also works on two lines!"
+sleep .5
+echo "lcd 'disco time!'"
+lcd "disco time"
+sleep .5
+echo "lcd '>:)'"
+lcd ">:)" "1"
+echo "for i in {1..10}; do lcd 'arbitrary' 'n'; done"
+for i in {1..10}; do lcd 'arbitrary' 'n'; done

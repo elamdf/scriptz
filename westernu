@@ -1,0 +1,3 @@
+#!/bin/sh
+woof -U
+ls | egrep '\.zip$' | xargs woof

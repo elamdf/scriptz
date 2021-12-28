@@ -1,0 +1,7 @@
+#!/bin/sh
+export PROJECT=raspi
+export PRJROOT=/home/elamd/projects/embedded_net_audio/${PROJECT}
+export TARGET=arm-unknown-eabi
+export PREFIX=${PRJROOT}/tools
+export TARGET_PREFIX=${PREFIX}/${TARGET}
+export PATH=${PREFIX}/bin:${PATH}

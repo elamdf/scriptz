@@ -3,9 +3,10 @@ cmds="\
 1_lit	timeout 30s firefox   "https://zoom.us/j/92604873604?pwd=Wm9aajVrd043em9VU242YlB3ZVdsUT09"
 2_orch	timeout 30s firefox   "https://ausdk12-org.zoom.us/j/98806237456?pwd=ck5HRVlERjI4ZUd5UXJWWWdRajVyQT09"
 3_csa	timeout 30s firefox   "https://ausdk12-org.zoom.us/j/97146661722?pwd=TTBnMys4cFhPRGYyUVd3VWU2S2pBQT09"
-4_phys	timeout 30s firefox   "https://ausdk12-org.zoom.us/j/97066282455?pwd=MTkwL1Foc3BHQ1ZWS21kOHVncm93QT09"
+4_phys	timeout 30s firefox   "https://ausdk12-org.zoom.us/j/95266452394?pwd=M3RhVlViKzV0bS8yeUZyaDZpdXg0QT09"
 6_econ	timeout 30s firefox    "https://ausdk12-org.zoom.us/j/96144630057?pwd=U01wVWpIMXczQU1URzJILzNUZXFFUT09"
 "
 choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu)" || exit 1
+# original physics 4 link is "https://ausdk12-org.zoom.us/j/97066282455?pwd=MTkwL1Foc3BHQ1ZWS21kOHVncm93QT09"
 
 `echo "$cmds" | grep "^$choice	" | cut -d '	' -f2,3-`

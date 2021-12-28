@@ -1,5 +1,16 @@
 #!/bin/bash
-xrandr --auto
-xrandr --output HDMI2 --rotate normal
-xrandr --auto --output HDMI2 --left-of LVDS1
-remaps
+ if [[ -n $1 ]]; then
+            sleep "$1"
+ fi
+xrandr -d :0.0 --auto
+if xrandr --query | grep -i 'HDMI-2 connected'; then
+    xrandr -d :0.0 --output "HDMI-2" --rotate normal
+    xrandr -d :0.0 --output "HDMI-2" --mode 1920x1080
+    xrandr -d :0.0 --auto --output "HDMI-2" --primary --left-of "LVDS-1"
+fi
+if xrandr --query | grep -i 'DP-1 connected'; then
+    xrandr -d :0.0 --output DP-1 --rotate normal
+    xrandr -d :0.0 --auto --output DP1 --primary --above "LVDS-1"
+fi
+/home/elamd/.local/bin/remaps
+/home/elamd/.local/bin/setbg

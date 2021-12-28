@@ -1,0 +1,3 @@
+#!/bin/sh
+alias gcc=/usr/bin/x86_64-pc-linux-gnu-gcc-10.2.0
+alias g++=/usr/bin/x86_64-pc-linux-gnu-g++-10

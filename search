@@ -1,6 +1,7 @@
 #!/bin/bash
 search=$(echo "make a search!" | dmenu)
 
+
 echo "$search"
 if test -z "$search" # pressed esc or smth
 then
@@ -9,6 +10,9 @@ then
 fi
 
 if ! [ "$(sed -n "/up/p" /sys/class/net/*/operstate 2>/dev/null)" ]; then
+    if ! grep -qs '/mnt/SSD ' /proc/mounts; then
+        sudo mount /dev/sda1 /mnt/SSD
+    fi
 
 	if ! [ "$(pgrep kiwix-serve)" ]; then
 		sudo kiwix-serve -d /mnt/SSD/kiwix/wikipedia_en_all_maxi_2021-02.zim

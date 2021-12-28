@@ -1,7 +1,12 @@
+#!/bin/sh
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
   exit 1
 fi
+if [ -z "$(ls -A /mnt/backup)" ]; then
+    umount /mnt/backup
+fi
+
 cryptsetup luksOpen /dev/disk/by-uuid/3b8dae69-5951-41f0-9cc2-260c8b55e7b4 backup --key-file /root/backup.key
 mount /dev/mapper/backup /mnt/backup
 rsync -gloptrucv --exclude "/mnt/*" --exclude "home/elamd/.mozilla/firefox/26cq4l13.default-release/storage/default/" --exclude "home/elamd/.mozilla/firefox/26cq4l13.default-release/storage/default/" --exclude "/home/elamd/.cache" --exclude "/home/elamd/.arduino*" / /mnt/backup

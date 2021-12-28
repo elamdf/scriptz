@@ -1,7 +1,0 @@
-#!/bin/bash
-clear
-cd "$PAPER"
-echo ""
-ls
-opout paper.tex
-vim paper.tex
